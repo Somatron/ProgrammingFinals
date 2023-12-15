@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/abdda534a9.js" crossorigin="arrays"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="dropdown">                
+            
+            Choose cultural meals
+           
+
+            <button onclick="openLink();" class='button'>I'm feeling lucky</button>  <!--Button and function-->              
+            
+                <script type="text/javascript">
+                <!--
+                // Here are the arrays of the links to choose from:
+                const links = new Array();
+                links[0] = "https://www.insider.com/mediterranean-diet-lunch-ideas-for-kid-friendly-dietitian-2023-9";
+                links[1] = "https://www.indianhealthyrecipes.com/recipes/kids-favorites/";
+                links[2] = "https://www.mylittlemoppet.com/healthy-chinese-recipes-for-kids/";
+                links[3] = "https://kids.kiddle.co/South_American_cuisine";
+                links[4] = "https://kids.kiddle.co/Soul_food";
+                links[5] = "https://www.family-travel-scoop.com/spanish-food-for-kids.html"
+
+                function openLink() {
+                  //Chooses random link:
+                  const i = Math.floor(Math.random() * links.length);
+                  //Directs the brower website to the link:
+                  parent.location = links[i];
+                  return false;
+                }
+                //-->
+                </script>
+        
+        </div class = "menu">  <!--Creates a class that place holds all links to different website-->    
+            <ul>
+                <li><a href="https://www.insider.com/mediterranean-diet-lunch-ideas-for-kid-friendly-dietitian-2023-9">Mediterranean</a></li>
+                <li><a href="https://www.indianhealthyrecipes.com/recipes/kids-favorites/">South Asian</a></li> 
+                <li><a href="https://www.mylittlemoppet.com/healthy-chinese-recipes-for-kids/">Eastern Asia</a></li>
+                <li><a href="https://kids.kiddle.co/South_American_cuisine">South America</a></li>
+                <li><a href="https://kids.kiddle.co/Soul_food">African</a></li>
+                <li><a href="https://www.family-travel-scoop.com/spanish-food-for-kids.html">Spainish</a></li>
+            </ul>
+
+            <p id="p1"></p>
+            
+            <p>Want to quiz yourself?</p> <!--Quiz section to test yourself-->   
+
+            <button onclick="quiztime();" class='button'>Quiz me out</button>
+            
+            <script>
+            
+            function quiztime(){ //creates function, variable set of asking questions
+                var questions = [
+            
+                {
+                    prompt: "What country does paneer butter masala belong to??\n(a) Spain\n(b) Mexico\n(c) India\n(d) China", //question with \n being the option
+                    answer: "c" //correct answer,
+                },
+                
+                {
+                    prompt: "What country does Sticky Crispy Orange Chicken come from?\n(a) South Africa\n(b) China\n(c) Japan \n(d) South Korea",            
+                    answer: "b"
+                },
+                
+                {
+                    prompt: "What country does Tapas originate from?\n(a) Spain\n(b) Mexico\n(c) Italy\n(d) France",
+                    answer: "a"
+                },
+
+                {
+                    prompt: "Where does Baked Chicken Jollof Rice originate from?\n(a) India\n(b) Australia\n(c) USA\n(d) Africa",
+                    answer: "d"
+                },
+                
+                {
+                    prompt: "What country does Pachamanca originate from?\n(a) Mexico\n(b) Chile\n(c) Peru\n(d) Bolivia",
+                    answer: "c"
+                },
+
+                ]
+                    var score = 0;
+
+                    for(var i=0; i < questions.length; i++){ //use i as index to repeat for a short # ammount of time
+                        var response = window.prompt(questions[i].prompt); //asks that question prompt for the prompt of the array
+                        if(response == questions[i].answer){ //if the response they give is equal to the current question then its good
+                        score++;
+                        alert("Correct!");
+                    }
+                    else{
+                        alert("WRONG!!!!!"); //windows alert
+                        }
+                    }
+                        alert("you got " + score + "/" + questions.length);
+
+            }
+            </script>
+    </div>
+
+
+
+    <script>
+       var yes = 6; 
+    </script>
+    
+    <!-- This class references links through a menu, which unlike the
+    Im feeling lucky button, just shares out each reference provided by the
+    links shared.-->
+    
+
+    <!--<label id="myLabel">What's your homeschool?: </label><br>
+    <input type="text" id="myText"><br>
+    <button type="button" id="myButton">PRESS ME OH OH OH</button> 
+    <button type="button" id="myButt">See loop again</button> -->
+    <script src="final.js"></script> 
+   
+ 
+</body>
+</html>
+
+<!--Credit to where credit is due
+
+- Multi choice questions: https://www.youtube.com/watch?v=LQGTb112N_c
+
+- Background color change: https://www.youtube.com/shorts/-A5KpKA1KwQ 
+
+- Getting the button to randomize and go to links https://stackoverflow.com/questions/49102455/creating-a-random-redirect-button
+
+--> 
